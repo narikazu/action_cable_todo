@@ -11,4 +11,9 @@ class BoardChannel < ApplicationCable::Channel
   def speak(data)
     Task.create! content: data['task']
   end
+
+  def checked(data)
+    task = Task.find(data['task'])
+    task.update(completed: true)
+  end
 end
