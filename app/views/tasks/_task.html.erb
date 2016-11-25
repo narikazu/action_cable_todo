@@ -1,6 +1,6 @@
-<div class="todo-row">
+<div class="todo-row" data-task-id="<%= task.id %>">
   <label>
-    <input type="checkbox" name="task<%= task.id %>" class="todo-checkbox" <%= "checked='checked'" if task.completed? %>>
+    <input type="checkbox" name="task<%= task.id %>" class="todo-checkbox" <%= "checked='checked'" if task.completed? %> data-task-id="<%= task.id %>">
     <%= task.content %>
   </label>
 </div>
