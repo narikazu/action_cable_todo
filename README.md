@@ -8,7 +8,9 @@ Things you may want to cover:
 * Ruby version
 
 * System dependencies
-
+  * SQLite
+  * PostgreSQL
+    * `brew install postgresql`
 * Configuration
 
 * Database creation
