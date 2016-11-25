@@ -6,7 +6,7 @@ App.board = App.cable.subscriptions.create "BoardChannel",
     # Called when the subscription has been terminated by the server
 
   received: (data) ->
-    alert data['task']
+    $('#todo-list').append data['task']
 
   speak: (task) ->
     @perform 'speak', task: task
