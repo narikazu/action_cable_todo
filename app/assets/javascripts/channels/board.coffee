@@ -10,3 +10,9 @@ App.board = App.cable.subscriptions.create "BoardChannel",
 
   speak: (task) ->
     @perform 'speak', task: task
+
+$(document).on 'keypress', '[data-behavior~=board_speaker]', (event) ->
+  if event.keyCode is 13
+    App.board.speak event.target.value
+    event.target.value = ''
+    event.preventDefault()
