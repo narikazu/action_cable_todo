@@ -9,6 +9,6 @@ class BoardChannel < ApplicationCable::Channel
   end
 
   def speak(data)
-    ActionCable.server.broadcast 'board_channel', task: data['task']
+    Task.create! content: data['task']
   end
 end
