@@ -2,7 +2,7 @@ class TaskBroadcastJob < ApplicationJob
   queue_as :default
 
   def perform(task)
-    ActionCable.server.broadcast 'board_channel', { task: task, render_task(task) }
+    ActionCable.server.broadcast 'board_channel', { task: task, rendered_task: render_task(task) }
   end
 
   private
