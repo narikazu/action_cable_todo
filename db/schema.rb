@@ -12,11 +12,11 @@
 
 ActiveRecord::Schema.define(version: 20161125090637) do
 
-  create_table "tasks", force: :cascade do |t|
-    t.text     "content"
-    t.boolean  "completed",  default: false, null: false
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+  create_table "tasks", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.text     "content",    limit: 65535
+    t.boolean  "completed",                default: false, null: false
+    t.datetime "created_at",                               null: false
+    t.datetime "updated_at",                               null: false
   end
 
 end
