@@ -21,6 +21,9 @@ App.board = App.cable.subscriptions.create "BoardChannel",
   checked: (task) ->
     @perform 'checked', task: task
 
+  unchecked: (task) ->
+    @perform 'unchecked', task: task
+
 $(document).on 'keypress', '[data-behavior~=board_speaker]', (event) ->
   if event.keyCode is 13
     App.board.speak event.target.value
@@ -30,4 +33,6 @@ $(document).on 'keypress', '[data-behavior~=board_speaker]', (event) ->
 $(document).on 'change', '.todo-checkbox', (event) ->
   if event.target.checked
     App.board.checked event.target.dataset.taskId
+  else
+    App.board.unchecked event.target.dataset.taskId
   event.preventDefault()

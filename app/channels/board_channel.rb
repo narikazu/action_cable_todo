@@ -16,4 +16,9 @@ class BoardChannel < ApplicationCable::Channel
     task = Task.find(data['task'])
     task.update(completed: true)
   end
+
+  def unchecked(data)
+    task = Task.find(data['task'])
+    task.update(completed: false)
+  end
 end
