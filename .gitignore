@@ -48,3 +48,5 @@ bower.json
 
 # vagrant
 .vagrant/
+
+database.yml
